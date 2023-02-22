@@ -10,10 +10,20 @@ const gameBoard = (function() {
     const htmlBoard = document.querySelector('.board')
     const player1win = document.querySelector('#wins1')
     const player2win = document.querySelector('#wins2')
-
+    const player1 = document.querySelector('#x')
+    const player2 = document.querySelector('#o')    
     let xguy = player('X')
     let oguy = player('O')
 
+    const colorIndicator = (function() {
+        if (xplayer === true) {
+            player1.style.color = 'green';
+            player2.style.color = 'black'
+        } else {
+            player2.style.color = 'green';
+            player1.style.color = 'black'
+        }
+    })
     // display board to screen
     const newBoard = (function() {
         count = 0;
@@ -21,6 +31,7 @@ const gameBoard = (function() {
         xplayer = true;
         player1win.textContent = `${xguy.wins} Wins`
         player2win.textContent = `${oguy.wins} Wins`
+        colorIndicator();
         board.map(x => {
             const div = document.createElement("div")
             div.classList.add('free')
@@ -82,12 +93,14 @@ const gameBoard = (function() {
             board[e.target.value] = 'X'
             e.target.textContent = 'X'
             xplayer = !xplayer
+            colorIndicator()
             checkwin()
         }
         else if (xplayer === false) {
             board[e.target.value] = 'O'
             e.target.textContent = 'O'
             xplayer = !xplayer
+            colorIndicator()
             checkwin()
         }
     }

@@ -115,6 +115,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    font-size: 50px;
+}
+#retry {
+    font-size: 25px;
+    padding: 10px;
 }
 
 .header {
