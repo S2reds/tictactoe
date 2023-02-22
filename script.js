@@ -43,6 +43,7 @@ const gameBoard = (function() {
         })
     })
     newBoard();
+    
 
     // show endscreen
     const endscreen = (function(x) {
@@ -125,7 +126,7 @@ const resetHandlers = (function() {
         })
     })
 })
-resetHandlers()
+resetHandlers();
 
 // retry button at endscreen
 const retry = document.querySelector('#retry')

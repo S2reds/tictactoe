@@ -27,8 +27,9 @@ body {
 
 .taken {
     border: 5px solid black;
-    text-align: center;
-    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .taken:first-child {
     border-top: 0;
